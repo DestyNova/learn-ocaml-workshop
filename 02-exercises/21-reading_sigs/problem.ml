@@ -74,7 +74,9 @@ end
 let two = Abstract_type_example.add Abstract_type_example.one Abstract_type_example.one
 let four = Abstract_type_example.to_int (Abstract_type_example.add two two);;
 
-assert (four = 4)
+let%test "Testing four" =
+  Int.(=) 4 four
+;;
 
 module Fraction : sig
   type t
